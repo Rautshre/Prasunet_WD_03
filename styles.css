@@ -1,0 +1,155 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+    max-width: 90%;
+    margin: 20px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite;
+}
+
+.mode-buttons {
+    margin-bottom: 20px;
+}
+
+.mode-button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #76c7c0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.mode-button:hover {
+    background: #63b2ab;
+    transform: scale(1.05);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.cell {
+    width: 100%;
+    padding-bottom: 100%; /* Aspect ratio 1:1 */
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    animation: slideIn 0.6s ease-in-out;
+}
+
+.cell:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+#reset {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #feb47b;
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#reset:hover {
+    background: #fdd6a7;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); }
+    100% { transform: scale(1); }
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 600px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .board {
+        gap: 15px;
+    }
+
+    .cell {
+        font-size: 3rem;
+    }
+
+    #reset {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .board {
+        gap: 20px;
+    }
+
+    .cell {
+        font-size: 3.5rem;
+    }
+
+    #reset {
+        font-size: 1.7rem;
+    }
+}
